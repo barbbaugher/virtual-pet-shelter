@@ -32,6 +32,8 @@ public class VirtualPetShelterApp {
 		System.out.println("4.  Admit a pet");
 		System.out.println("5.  Adopt a pet");
 		System.out.println("6.  Exit the program");
+		
+		displayAvailableVirtualPets(aHomeForHomelessVirtualPets);
 
 		String menuEntry = input.next();
 
@@ -74,6 +76,13 @@ public class VirtualPetShelterApp {
 		System.out.println("Enter the description of the pet:");
 		String petDescription = input.next();
 		return new VirtualPet(petName, petDescription);
+	}
+
+	// Display available pets
+
+	private static void displayAvailableVirtualPets(VirtualPetShelter aHomeForHomelessVirtualPets) {
+		System.out.println("Virtual Pets Available For Adoption: ");
+		System.out.println("Pet Name: " + aHomeForHomelessVirtualPets.getPets());
 	}
 
 }

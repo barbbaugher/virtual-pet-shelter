@@ -24,7 +24,7 @@ public class VirtualPet {
 		this.boredomLevel = 10;
 		this.thirstLevel = 10;
 	}
-	
+
 	public String getName() {
 		return petName;
 	}
@@ -85,4 +85,4 @@ public class VirtualPet {
 		return ("The Danimal died of exhaustion.");
 	}
 
-}	
+}
