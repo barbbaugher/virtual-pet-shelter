@@ -7,6 +7,20 @@ public class VirtualPetShelterApp {
 
 		VirtualPetShelter aHomeForHomelessVirtualPets = new VirtualPetShelter();
 
+		// Initial virtual pets available for adoption
+		VirtualPet firstPet = new VirtualPet("Frankie", "Italian Greyhound", 8, 5, 7);
+		aHomeForHomelessVirtualPets.addPet(firstPet);
+		VirtualPet secondPet = new VirtualPet("Bob", "Bull Mastiff", 4, 10, 4);
+		aHomeForHomelessVirtualPets.addPet(secondPet);
+		VirtualPet thirdPet = new VirtualPet("Molly", "Jug", 5, 7, 9);
+		aHomeForHomelessVirtualPets.addPet(thirdPet);
+		VirtualPet fourthPet = new VirtualPet("Buck", "Mutt", 6, 3, 10);
+		aHomeForHomelessVirtualPets.addPet(fourthPet);
+		VirtualPet fifthPet = new VirtualPet("Guido", "German Shepherd", 9, 6, 6);
+		aHomeForHomelessVirtualPets.addPet(fifthPet);
+		VirtualPet sixthPet = new VirtualPet("Gracie", "Puggle", 3, 10, 8);
+		aHomeForHomelessVirtualPets.addPet(sixthPet);
+
 		// The welcome display
 		System.out.println("Welcome to the Home for Homeless Virtual Pets");
 
@@ -15,8 +29,8 @@ public class VirtualPetShelterApp {
 		System.out.println("1.  Feed the pets");
 		System.out.println("2.  Water the pets");
 		System.out.println("3.  Play with a pet");
-		System.out.println("4.  Adopt a pet");
-		System.out.println("5.  Admit a pet");
+		System.out.println("4.  Admit a pet");
+		System.out.println("5.  Adopt a pet");
 		System.out.println("6.  Exit the program");
 
 		String menuEntry = input.next();
@@ -33,6 +47,7 @@ public class VirtualPetShelterApp {
 			break;
 
 		case "4":
+			aHomeForHomelessVirtualPets.addPet(promptUserForNewPet(input));
 			break;
 
 		case "5":
@@ -50,6 +65,15 @@ public class VirtualPetShelterApp {
 		}
 
 		input.close();
+	}
+
+	// Admit a pet
+	private static VirtualPet promptUserForNewPet(Scanner input) {
+		System.out.println("Enter the name of the pet:");
+		String petName = input.next();
+		System.out.println("Enter the description of the pet:");
+		String petDescription = input.next();
+		return new VirtualPet(petName, petDescription);
 	}
 
 }
