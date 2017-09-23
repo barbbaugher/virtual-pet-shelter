@@ -61,7 +61,7 @@ public class VirtualPetShelterApp {
 				int fun = 10;
 				System.out.println("Enter the pet's name you would like to play with: ");
 				String petName = input.next();
-				petShelter.petsAvailableForAdoption.get(petName).letsPlay(fun);
+				petShelter.getPetNamed(petName).letsPlay(fun);
 				petShelter.shelterTickMethod();
 				break;
 

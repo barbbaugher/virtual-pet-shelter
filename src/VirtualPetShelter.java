@@ -5,6 +5,10 @@ import java.util.Map;
 public class VirtualPetShelter {
 
 	Map<String, VirtualPet> petsAvailableForAdoption = new HashMap<>();
+	
+	public VirtualPet getPetNamed(String petName) {
+		return petsAvailableForAdoption.get(petName);
+	}
 
 	public Collection<VirtualPet> availablePets() {
 		return petsAvailableForAdoption.values();
