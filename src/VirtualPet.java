@@ -33,6 +33,18 @@ public class VirtualPet {
 		return petDescription;
 	}
 	
+	public int getHungerLevel() {
+		return hungerLevel;
+	}
+	
+	public int getBoredomLevel() {
+		return hungerLevel;
+	}
+	
+	public int getThirstLevel() {
+		return hungerLevel;
+	}
+	
 	// Activities
 
 	void letsEat(int food) {

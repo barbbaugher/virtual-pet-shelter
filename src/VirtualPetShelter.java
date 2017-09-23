@@ -1,16 +1,17 @@
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class VirtualPetShelter {
 
 	Map<String, VirtualPet> petsAvailableForAdoption = new HashMap<>();
 
-	public void getPets() {
+	public Collection<VirtualPet> availablePets() {
+		return petsAvailableForAdoption.values();
+	}
 
-		for (Entry<String, VirtualPet> availablePets : petsAvailableForAdoption.entrySet()) {
-			System.out.println("Name : " + availablePets.getKey() + " \tType : " + availablePets.getValue().getDescription());
-		}
+	public boolean arePetsAvailable() {
+		return petsAvailableForAdoption.isEmpty();
 	}
 
 	public void addPet(VirtualPet virtualPet) {
@@ -23,4 +24,18 @@ public class VirtualPetShelter {
 		petsAvailableForAdoption.remove(adoptablePetSearch);
 	}
 
+	// Tick method
+
+	int hungerTick = -1;
+	int boredomTick = -2;
+	int thirstTick = -1;
+	
+	void tickMethod() {
+		
+		for (VirtualPet availablePets : availablePets()) {
+			hungerTick += availablePets.getHungerLevel();
+			boredomTick +=availablePets.getBoredomLevel();
+			thirstTick += availablePets.getThirstLevel();
+		}
+	}
 }

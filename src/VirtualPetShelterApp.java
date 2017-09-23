@@ -24,45 +24,65 @@ public class VirtualPetShelterApp {
 		// The welcome display
 		System.out.println("Welcome to the Home for Homeless Virtual Pets");
 
-		// The menu display
-		System.out.println("Please select an option below by entering the corresponding number:");
-		System.out.println("1.  Feed the pets");
-		System.out.println("2.  Water the pets");
-		System.out.println("3.  Play with a pet");
-		System.out.println("4.  Admit a pet");
-		System.out.println("5.  Adopt a pet");
-		System.out.println("6.  Exit the program");
+		do {
 
-		String menuEntry = input.next();
+			// Display available pets
 
-		switch (menuEntry) {
+			System.out.println("Name \t|Hunger |Thirst |Boredom");
+			
+			for (VirtualPet availablePets : petShelter.availablePets()) {
+				System.out.println(availablePets.getName() + "\t|" + availablePets.getHungerLevel() + "\t|"
+						+ availablePets.getBoredomLevel() + "\t|" + availablePets.getThirstLevel());
+			}
 
-		case "1":
-			break;
+			// The menu display
+			System.out.println("Please select an option below by entering the corresponding number:");
+			System.out.println("1.  Let's Eat - feed all the pets");
+			System.out.println("2.  Let's Drink - water all the pets");
+			System.out.println("3.  Let's Play - select a pet to play with");
+			System.out.println("4.  Admit a pet");
+			System.out.println("5.  Adopt a pet");
+			System.out.println("6.  Exit the program");
 
-		case "2":
-			break;
+			String menuEntry = input.next();
 
-		case "3":
-			break;
+			switch (menuEntry) {
 
-		case "4":
-			petShelter.addPet(promptUserForNewPet(input));
-			break;
+			case "1":
+				petShelter.tickMethod();
+				break;
 
-		case "5":
-			break;
+			case "2":
+				petShelter.tickMethod();
+				break;
 
-		// Exit menu
-		case "6":
-			System.out.println("Thanks for playing.");
-			System.exit(0);
-			break;
+			case "3":
+				petShelter.tickMethod();
+				break;
 
-		// Invalid menu option entered
-		default:
-			System.out.println("Please select a valid menu option.");
-		}
+			case "4":
+				petShelter.addPet(promptUserForNewPet(input));
+				petShelter.tickMethod();
+				break;
+
+			case "5":
+				petShelter.tickMethod();
+				break;
+
+			// Exit menu
+			case "6":
+				System.out.println("Thanks for playing.");
+				System.exit(0);
+				break;
+
+			// Invalid menu option entered
+			default:
+				System.out.println("Please select a valid menu option.");
+			}
+
+		} while (petShelter.arePetsAvailable() == false);
+
+		System.out.println("Game over.");
 
 		input.close();
 	}
@@ -75,7 +95,5 @@ public class VirtualPetShelterApp {
 		String petDescription = input.next();
 		return new VirtualPet(petName, petDescription);
 	}
-
-	// Display available pets
 
 }
