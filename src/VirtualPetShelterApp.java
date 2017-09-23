@@ -8,14 +8,14 @@ public class VirtualPetShelterApp {
 		VirtualPetShelter petShelter = new VirtualPetShelter();
 
 		// Initial virtual pets available for adoption
-		VirtualPet firstPet = new VirtualPet("Frankie", "Italian Greyhound", 8, 5, 7);
-		petShelter.addPet(firstPet);
-		VirtualPet secondPet = new VirtualPet("Molly", "Jug", 5, 7, 9);
-		petShelter.addPet(secondPet);
-		VirtualPet thirdPet = new VirtualPet("Gracie", "Puggle", 3, 10, 8);
-		petShelter.addPet(thirdPet);
-		VirtualPet fourthPet = new VirtualPet("Buck", "Mutt", 6, 3, 10);
-		petShelter.addPet(fourthPet);
+		VirtualPet frankie = new VirtualPet("Frankie", "Italian Greyhound", 8, 5, 7);
+		petShelter.addPet(frankie);
+		VirtualPet molly = new VirtualPet("Molly", "Jug", 5, 7, 9);
+		petShelter.addPet(molly);
+		VirtualPet gracie = new VirtualPet("Gracie", "Puggle", 3, 10, 8);
+		petShelter.addPet(gracie);
+		VirtualPet buck = new VirtualPet("Buck", "Mutt", 6, 3, 10);
+		petShelter.addPet(buck);
 
 		// The welcome display
 		System.out.println("Welcome to the Home for Homeless Virtual Pets");
@@ -58,7 +58,10 @@ public class VirtualPetShelterApp {
 				break;
 
 			case "3":
+				int fun = 10;
 				System.out.println("Enter the pet's name you would like to play with: ");
+				String petName = input.next();
+				petShelter.petsAvailableForAdoption.get(petName).letsPlay(fun);
 				petShelter.shelterTickMethod();
 				break;
 
@@ -68,6 +71,9 @@ public class VirtualPetShelterApp {
 				break;
 
 			case "5":
+				System.out.println("Enter the pet's name you would like to adopt: ");
+				petName = input.next();
+				petShelter.petsAvailableForAdoption.remove(petName);
 				petShelter.shelterTickMethod();
 				break;
 
@@ -97,5 +103,5 @@ public class VirtualPetShelterApp {
 		String petDescription = input.next();
 		return new VirtualPet(petName, petDescription);
 	}
-
+	
 }

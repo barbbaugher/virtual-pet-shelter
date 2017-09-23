@@ -56,9 +56,9 @@ public class VirtualPet {
 		return ("Nom, nom, nom...\n");
 	}
 
-	void letsDance(int fun) {
+	void letsPlay(int fun) {
 		boredomLevel += fun;
-		thirstLevel -= 1;
+		thirstLevel -= 2;
 	}
 
 	public String afterDancing() {

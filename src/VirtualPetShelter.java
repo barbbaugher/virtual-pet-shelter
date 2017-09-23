@@ -19,11 +19,6 @@ public class VirtualPetShelter {
 		petsAvailableForAdoption.put(adoptablePetSearch, virtualPet);
 	}
 	
-	public String searchForAPet(VirtualPet virtualPet) {
-		String adoptablePetSearch = virtualPet.getName();
-		return adoptablePetSearch;
-	}
-
 	public void removePet(VirtualPet virtualPet) {
 		String adoptablePetSearch = virtualPet.getName();
 		petsAvailableForAdoption.remove(adoptablePetSearch);
