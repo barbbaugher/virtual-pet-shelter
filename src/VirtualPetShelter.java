@@ -6,11 +6,11 @@ public class VirtualPetShelter {
 
 	Map<String, VirtualPet> petsAvailableForAdoption = new HashMap<>();
 
-	public String getPets() {
+	public void getPets() {
+
 		for (Entry<String, VirtualPet> availablePets : petsAvailableForAdoption.entrySet()) {
-			return availablePets.getKey() + " " + availablePets.getValue();
+			System.out.println("Name : " + availablePets.getKey() + " \tType : " + availablePets.getValue().getDescription());
 		}
-		return null;
 	}
 
 	public void addPet(VirtualPet virtualPet) {

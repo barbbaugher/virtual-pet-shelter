@@ -29,6 +29,10 @@ public class VirtualPet {
 		return petName;
 	}
 
+	public String getDescription() {
+		return petDescription;
+	}
+	
 	// Activities
 
 	void letsEat(int food) {

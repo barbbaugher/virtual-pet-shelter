@@ -5,21 +5,21 @@ public class VirtualPetShelterApp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
-		VirtualPetShelter aHomeForHomelessVirtualPets = new VirtualPetShelter();
+		VirtualPetShelter petShelter = new VirtualPetShelter();
 
 		// Initial virtual pets available for adoption
 		VirtualPet firstPet = new VirtualPet("Frankie", "Italian Greyhound", 8, 5, 7);
-		aHomeForHomelessVirtualPets.addPet(firstPet);
+		petShelter.addPet(firstPet);
 		VirtualPet secondPet = new VirtualPet("Bob", "Bull Mastiff", 4, 10, 4);
-		aHomeForHomelessVirtualPets.addPet(secondPet);
+		petShelter.addPet(secondPet);
 		VirtualPet thirdPet = new VirtualPet("Molly", "Jug", 5, 7, 9);
-		aHomeForHomelessVirtualPets.addPet(thirdPet);
+		petShelter.addPet(thirdPet);
 		VirtualPet fourthPet = new VirtualPet("Buck", "Mutt", 6, 3, 10);
-		aHomeForHomelessVirtualPets.addPet(fourthPet);
+		petShelter.addPet(fourthPet);
 		VirtualPet fifthPet = new VirtualPet("Guido", "German Shepherd", 9, 6, 6);
-		aHomeForHomelessVirtualPets.addPet(fifthPet);
+		petShelter.addPet(fifthPet);
 		VirtualPet sixthPet = new VirtualPet("Gracie", "Puggle", 3, 10, 8);
-		aHomeForHomelessVirtualPets.addPet(sixthPet);
+		petShelter.addPet(sixthPet);
 
 		// The welcome display
 		System.out.println("Welcome to the Home for Homeless Virtual Pets");
@@ -32,8 +32,6 @@ public class VirtualPetShelterApp {
 		System.out.println("4.  Admit a pet");
 		System.out.println("5.  Adopt a pet");
 		System.out.println("6.  Exit the program");
-		
-		displayAvailableVirtualPets(aHomeForHomelessVirtualPets);
 
 		String menuEntry = input.next();
 
@@ -49,7 +47,7 @@ public class VirtualPetShelterApp {
 			break;
 
 		case "4":
-			aHomeForHomelessVirtualPets.addPet(promptUserForNewPet(input));
+			petShelter.addPet(promptUserForNewPet(input));
 			break;
 
 		case "5":
@@ -79,10 +77,5 @@ public class VirtualPetShelterApp {
 	}
 
 	// Display available pets
-
-	private static void displayAvailableVirtualPets(VirtualPetShelter aHomeForHomelessVirtualPets) {
-		System.out.println("Virtual Pets Available For Adoption: ");
-		System.out.println("Pet Name: " + aHomeForHomelessVirtualPets.getPets());
-	}
 
 }
