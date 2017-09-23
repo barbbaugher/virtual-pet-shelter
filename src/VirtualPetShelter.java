@@ -18,6 +18,11 @@ public class VirtualPetShelter {
 		String adoptablePetSearch = virtualPet.getName();
 		petsAvailableForAdoption.put(adoptablePetSearch, virtualPet);
 	}
+	
+	public String searchForAPet(VirtualPet virtualPet) {
+		String adoptablePetSearch = virtualPet.getName();
+		return adoptablePetSearch;
+	}
 
 	public void removePet(VirtualPet virtualPet) {
 		String adoptablePetSearch = virtualPet.getName();
@@ -26,16 +31,24 @@ public class VirtualPetShelter {
 
 	// Tick method
 
-	int hungerTick = -1;
-	int boredomTick = -2;
-	int thirstTick = -1;
-	
-	void tickMethod() {
-		
+	public void shelterTickMethod() {
+
 		for (VirtualPet availablePets : availablePets()) {
-			hungerTick += availablePets.getHungerLevel();
-			boredomTick +=availablePets.getBoredomLevel();
-			thirstTick += availablePets.getThirstLevel();
+			availablePets.tickMethod();
+		}
+	}
+	
+	public void feedTheShelter(int food) {
+
+		for (VirtualPet availablePets : availablePets()) {
+			availablePets.letsEat(food);
+		}
+	}
+	
+	public void waterTheShelter(int water) {
+
+		for (VirtualPet availablePets : availablePets()) {
+			availablePets.letsDrink(water);
 		}
 	}
 }

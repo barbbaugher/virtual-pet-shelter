@@ -10,16 +10,12 @@ public class VirtualPetShelterApp {
 		// Initial virtual pets available for adoption
 		VirtualPet firstPet = new VirtualPet("Frankie", "Italian Greyhound", 8, 5, 7);
 		petShelter.addPet(firstPet);
-		VirtualPet secondPet = new VirtualPet("Bob", "Bull Mastiff", 4, 10, 4);
+		VirtualPet secondPet = new VirtualPet("Molly", "Jug", 5, 7, 9);
 		petShelter.addPet(secondPet);
-		VirtualPet thirdPet = new VirtualPet("Molly", "Jug", 5, 7, 9);
+		VirtualPet thirdPet = new VirtualPet("Gracie", "Puggle", 3, 10, 8);
 		petShelter.addPet(thirdPet);
 		VirtualPet fourthPet = new VirtualPet("Buck", "Mutt", 6, 3, 10);
 		petShelter.addPet(fourthPet);
-		VirtualPet fifthPet = new VirtualPet("Guido", "German Shepherd", 9, 6, 6);
-		petShelter.addPet(fifthPet);
-		VirtualPet sixthPet = new VirtualPet("Gracie", "Puggle", 3, 10, 8);
-		petShelter.addPet(sixthPet);
 
 		// The welcome display
 		System.out.println("Welcome to the Home for Homeless Virtual Pets");
@@ -28,8 +24,8 @@ public class VirtualPetShelterApp {
 
 			// Display available pets
 
-			System.out.println("Name \t|Hunger |Thirst |Boredom");
-			
+			System.out.println("Name \t|Hunger |Boredom |Thirst");
+
 			for (VirtualPet availablePets : petShelter.availablePets()) {
 				System.out.println(availablePets.getName() + "\t|" + availablePets.getHungerLevel() + "\t|"
 						+ availablePets.getBoredomLevel() + "\t|" + availablePets.getThirstLevel());
@@ -49,24 +45,30 @@ public class VirtualPetShelterApp {
 			switch (menuEntry) {
 
 			case "1":
-				petShelter.tickMethod();
+				int food = 6;
+				petShelter.feedTheShelter(food);
+				;
+				petShelter.shelterTickMethod();
 				break;
 
 			case "2":
-				petShelter.tickMethod();
+				int water = 5;
+				petShelter.waterTheShelter(water);
+				petShelter.shelterTickMethod();
 				break;
 
 			case "3":
-				petShelter.tickMethod();
+				System.out.println("Enter the pet's name you would like to play with: ");
+				petShelter.shelterTickMethod();
 				break;
 
 			case "4":
 				petShelter.addPet(promptUserForNewPet(input));
-				petShelter.tickMethod();
+				petShelter.shelterTickMethod();
 				break;
 
 			case "5":
-				petShelter.tickMethod();
+				petShelter.shelterTickMethod();
 				break;
 
 			// Exit menu

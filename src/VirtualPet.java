@@ -32,19 +32,19 @@ public class VirtualPet {
 	public String getDescription() {
 		return petDescription;
 	}
-	
+
 	public int getHungerLevel() {
 		return hungerLevel;
 	}
-	
+
 	public int getBoredomLevel() {
-		return hungerLevel;
+		return boredomLevel;
 	}
-	
+
 	public int getThirstLevel() {
-		return hungerLevel;
+		return thirstLevel;
 	}
-	
+
 	// Activities
 
 	void letsEat(int food) {
@@ -65,9 +65,9 @@ public class VirtualPet {
 		return ("Put on your red shoes and dance the blues...\n");
 	}
 
-	void letsReadABedtimeStory(int sleep) {
-		thirstLevel += sleep;
-		hungerLevel -= 2;
+	void letsDrink(int water) {
+		thirstLevel += water;
+		hungerLevel -= 1;
 		boredomLevel -= 1;
 	}
 
@@ -77,7 +77,7 @@ public class VirtualPet {
 
 	// Tick method
 
-	void tickMethod() {
+	public void tickMethod() {
 		hungerLevel--;
 		boredomLevel -= 2;
 		thirstLevel--;
