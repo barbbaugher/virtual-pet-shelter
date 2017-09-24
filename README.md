@@ -4,13 +4,13 @@ Welcome to the Home for Homeless Virtual Pets
 
 To start the game the following pets are available for adoption in the shelter:
 
-Buck	|A fun loving Mutt that just wants to run and play
+	Buck	|A fun loving Mutt that just wants to run and play
 
-Gracie	|A sweet Puggle that could stand to lose a few pounds
+	Gracie	|A sweet Puggle that could stand to lose a few pounds
 
-Molly	|A Jug who would love to rip the face off the mailman
+	Molly	|A Jug who would love to rip the face off the mailman
 
-Frankie	|An Italian Greyhound who likes long walks along the Scioto
+	Frankie	|An Italian Greyhound who likes long walks along the Scioto
 
 
 Attributes (instance variables)
