@@ -24,7 +24,7 @@ Attributes (instance variables)
 These are the statuses of the inital pets in the shelter whene the game begins:
 
 
-	Name 	|Hunger |Thirst |Boredom
+	Name 	|Hunger 	|Thirst 	|Boredom
 
 	Buck	|6		|10		|3
 
@@ -33,31 +33,44 @@ These are the statuses of the inital pets in the shelter whene the game begins:
 	Molly	|5		|9		|7
 
 	Frankie	|8		|7		|5
-	
+
 
 The game ends when all of the available pets have been adopted.
 
 Activities (methods)
 
 1.  Let's Eat - feed all the pets
+
 		hungerLevel + 6
+
 		thirstLevel - 1
 
+
 2.  Let's Drink - water all the pets
+
 		thirstLevel + 5
+
 		hungerLevel - 1
+
 		boredomLevel -1
 
+
 3.  Let's Play - select a pet to play with
+
 		boredomLevel + 10
+
 		thirstLevel - 2
 
 4.  Admit a pet to the shelter
+
 		Enter a new virtual pet by providing their name and description
+
 		The tick method runs
 
 5.  Adopt a pet from the shelter
+
 		Adopt a pet from the shelter by removing them from the collection
+		
 		The tick method runs
 
 6.  Exit the program.
