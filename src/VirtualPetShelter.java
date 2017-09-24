@@ -4,48 +4,52 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
+	// Creating the HashMap
 	Map<String, VirtualPet> petsAvailableForAdoption = new HashMap<>();
-	
-	public VirtualPet getPetNamed(String petName) {
-		return petsAvailableForAdoption.get(petName);
-	}
 
+	// Displaying the available pets
 	public Collection<VirtualPet> availablePets() {
 		return petsAvailableForAdoption.values();
 	}
 
+	// Get method to return a pet based on a name search
+	public VirtualPet getPet(String petName) {
+		return petsAvailableForAdoption.get(petName);
+	}
+
+	// Are there still pets available for adoption?
 	public boolean arePetsAvailable() {
 		return petsAvailableForAdoption.isEmpty();
 	}
 
+	// Adding a new pet to the shelter
 	public void addPet(VirtualPet virtualPet) {
 		String adoptablePetSearch = virtualPet.getName();
 		petsAvailableForAdoption.put(adoptablePetSearch, virtualPet);
 	}
-	
+
+	// Adopting a pet from the shelter
 	public void removePet(VirtualPet virtualPet) {
 		String adoptablePetSearch = virtualPet.getName();
 		petsAvailableForAdoption.remove(adoptablePetSearch);
 	}
 
 	// Tick method
-
 	public void shelterTickMethod() {
-
 		for (VirtualPet availablePets : availablePets()) {
 			availablePets.tickMethod();
 		}
 	}
-	
-	public void feedTheShelter(int food) {
 
+	// Feed all of the pets in the shelter
+	public void feedTheShelter(int food) {
 		for (VirtualPet availablePets : availablePets()) {
 			availablePets.letsEat(food);
 		}
 	}
-	
-	public void waterTheShelter(int water) {
 
+	// Water all of the pets in the shelter
+	public void waterTheShelter(int water) {
 		for (VirtualPet availablePets : availablePets()) {
 			availablePets.letsDrink(water);
 		}

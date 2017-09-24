@@ -5,40 +5,35 @@ public class VirtualPetShelterApp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
+		// Creating the pet shelter
 		VirtualPetShelter petShelter = new VirtualPetShelter();
 
-		// Initial virtual pets available for adoption
-		VirtualPet frankie = new VirtualPet("Frankie", "Italian Greyhound", 8, 5, 7);
+		// Adding the initial virtual pets available for adoption
+		VirtualPet frankie = new VirtualPet("Frankie", "An Italian Greyhound who likes long walks along the Scioto", 8,
+				5, 7);
 		petShelter.addPet(frankie);
-		VirtualPet molly = new VirtualPet("Molly", "Jug", 5, 7, 9);
+		VirtualPet molly = new VirtualPet("Molly", "A Jug who would love to rip the face off the mailman", 5, 7, 9);
 		petShelter.addPet(molly);
-		VirtualPet gracie = new VirtualPet("Gracie", "Puggle", 3, 10, 8);
+		VirtualPet gracie = new VirtualPet("Gracie", "A sweet Puggle that could stand to lose a few pounds", 3, 10, 8);
 		petShelter.addPet(gracie);
-		VirtualPet buck = new VirtualPet("Buck", "Mutt", 6, 3, 10);
+		VirtualPet buck = new VirtualPet("Buck", "A fun loving Mutt that just wants to run and play", 6, 3, 10);
 		petShelter.addPet(buck);
 
-		// The welcome display
-		System.out.println("Welcome to the Home for Homeless Virtual Pets");
+		// The welcome message
+		System.out.println(displayWelcomeMessage());
 
 		do {
 
-			// Display available pets
-
-			System.out.println("Name \t|Hunger |Boredom |Thirst");
-
+			// Display pet statuses
+			System.out.println("Here are the current status of the pets available for adoption:\n");
+			System.out.println("Name \t|Hunger |Thirst |Boredom");
 			for (VirtualPet availablePets : petShelter.availablePets()) {
 				System.out.println(availablePets.getName() + "\t|" + availablePets.getHungerLevel() + "\t|"
-						+ availablePets.getBoredomLevel() + "\t|" + availablePets.getThirstLevel());
+						+ availablePets.getThirstLevel() + "\t|" + availablePets.getBoredomLevel());
 			}
 
 			// The menu display
-			System.out.println("Please select an option below by entering the corresponding number:");
-			System.out.println("1.  Let's Eat - feed all the pets");
-			System.out.println("2.  Let's Drink - water all the pets");
-			System.out.println("3.  Let's Play - select a pet to play with");
-			System.out.println("4.  Admit a pet");
-			System.out.println("5.  Adopt a pet");
-			System.out.println("6.  Exit the program");
+			System.out.println(displayMenu());
 
 			String menuEntry = input.next();
 
@@ -47,7 +42,6 @@ public class VirtualPetShelterApp {
 			case "1":
 				int food = 6;
 				petShelter.feedTheShelter(food);
-				;
 				petShelter.shelterTickMethod();
 				break;
 
@@ -61,7 +55,7 @@ public class VirtualPetShelterApp {
 				int fun = 10;
 				System.out.println("Enter the pet's name you would like to play with: ");
 				String petName = input.next();
-				petShelter.getPetNamed(petName).letsPlay(fun);
+				petShelter.getPet(petName).letsPlay(fun);
 				petShelter.shelterTickMethod();
 				break;
 
@@ -95,6 +89,16 @@ public class VirtualPetShelterApp {
 		input.close();
 	}
 
+	// Welcome message
+	private static String displayWelcomeMessage() {
+		return "Welcome to the Home for Homeless Virtual Pets\n*Unless you are a virtual cat... no virtual cats allowed.\n";
+	}
+
+	// Menu display
+	private static String displayMenu() {
+		return "\nPlease select an option below by entering the corresponding number:\n\n1.  Let's Eat - feed all the pets\n2.  Let's Drink - water all the pets\n3.  Let's Play - select a pet to play with\n4.  Admit a pet to the shelter\n5.  Adopt a pet from the shelter\n6.  Exit the program";
+	}
+
 	// Admit a pet
 	private static VirtualPet promptUserForNewPet(Scanner input) {
 		System.out.println("Enter the name of the pet:");
@@ -103,5 +107,5 @@ public class VirtualPetShelterApp {
 		String petDescription = input.next();
 		return new VirtualPet(petName, petDescription);
 	}
-	
+
 }
