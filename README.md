@@ -1,57 +1,63 @@
-Meet the Danimal.
+Welcome to the Home for Homeless Virtual Pets
+*Unless you are a virtual cat... no virtual cats allowed.
 
-        _________         .    .
-       (..       \_    ,  |\  /|
-        \       0  \  /|  \ \/ /
-         \______    \/ |   \  /
-            vvvv\    \ |   /  |
-            \^^^^  ==   \_/   |
-             `\_   ===    \.  |
-             / /\_   \ /      |
-             |/   \_  \|      /
-                    \________/
+To star the game the following pets are available for adoption in the shelter:
 
-The Danimal is the nickname we have given my three year old nephew.  He loves sharks, cheese, dancing, and reading bedtime stories.
+Buck	|A fun loving Mutt that just wants to run and play
+Gracie	|A sweet Puggle that could stand to lose a few pounds
+Molly	|A Jug who would love to rip the face off the mailman
+Frankie	|An Italian Greyhound who likes long walks along the Scioto
 
 Attributes (instance variables)
 
-hungerLevel
+These are the statuses of the inital pets in the shelter whene the game begins:
 
-boredomLevel
+HungerLevel
+BoredomLevel
+ThirstLevel
 
-tirednessLevel
+Name 	|Hunger |Thirst |Boredom
+Buck	|6		|10		|3
+Gracie	|3		|8		|10
+Molly	|5		|9		|7
+Frankie	|8		|7		|5
 
-To start the game the Danimal's hungerLevel is at 8, his boredomLevel is at 5, and his tirednessLevel is at 10.  The game ends when any of these levels are equal to or below zero.
+The game ends when all of the available pets have been adopted.
 
 Activities (methods)
 
-1.  Let's Eat! - to address his hungerLevel
-		hungerLevel + 3
-		tirednessLevel - 1
+1.  Let's Eat - feed all the pets
+		hungerLevel + 6
+		thirstLevel - 1
 
-2.  Let's Dance! - to address his boredomLevel
-		boredomLevel + 6
-		tirednessLevel - 1
+2.  Let's Drink - water all the pets
+		thirstLevel + 5
+		hungerLevel - 1
+		boredomLevel -1
 
-3.  Let's Read a Bedtime Story! - to address his tirednessLevel
-		tirednessLevel + 5
-		hungerLevel - 2
-		boredomLevel - 1
+3.  Let's Play - select a pet to play with
+		boredomLevel + 10
+		thirstLevel - 2
 
-4.  Or we can be lame and do nothing...
+4.  Admit a pet to the shelter
+		Enter a new virtual pet by providing their name and description
 		The tick method runs
 
-5.  Exit the program.
+5.  Adopt a pet from the shelter
+		Adopt a pet from the shelter by removing them from the collection
+		The tick method runs
+
+6.  Exit the program.
 
 Tick Method
 
-After each turn - Danimal's levels are adjusted by the following ammounts:
+After each turn - all the virtual pets in the shelter have their levels adjusted by the following ammounts:
 
 	hungerLevel - 1
 
 	boredomLevel - 2
 
-	tirednesssLevel - 1
+	thirstLevel - 1
 
 
 
