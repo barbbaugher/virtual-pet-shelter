@@ -70,14 +70,14 @@ Activities (methods)
 5.  Adopt a pet from the shelter
 
 		Adopt a pet from the shelter by removing them from the collection
-		
+
 		The tick method runs
 
 6.  Exit the program.
 
 Tick Method
 
-After each turn - all the virtual pets in the shelter have their levels adjusted by the following ammounts:
+After each turn - all the virtual pets in the shelter have their levels adjusted by the following amounts:
 
 	hungerLevel - 1
 
