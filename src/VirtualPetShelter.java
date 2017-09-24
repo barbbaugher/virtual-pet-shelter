@@ -28,12 +28,6 @@ public class VirtualPetShelter {
 		petsAvailableForAdoption.put(adoptablePetSearch, virtualPet);
 	}
 
-	// Adopting a pet from the shelter
-	public void removePet(VirtualPet virtualPet) {
-		String adoptablePetSearch = virtualPet.getName();
-		petsAvailableForAdoption.remove(adoptablePetSearch);
-	}
-
 	// Tick method
 	public void shelterTickMethod() {
 		for (VirtualPet availablePets : availablePets()) {

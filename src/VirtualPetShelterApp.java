@@ -25,7 +25,7 @@ public class VirtualPetShelterApp {
 		do {
 
 			// Display pet statuses
-			System.out.println("Here are the current status of the pets available for adoption:\n");
+			System.out.println("Here is the current status of the pets available for adoption:\n");
 			System.out.println("Name \t|Hunger |Thirst |Boredom");
 			for (VirtualPet availablePets : petShelter.availablePets()) {
 				System.out.println(availablePets.getName() + "\t|" + availablePets.getHungerLevel() + "\t|"
@@ -43,20 +43,26 @@ public class VirtualPetShelterApp {
 				int food = 6;
 				petShelter.feedTheShelter(food);
 				petShelter.shelterTickMethod();
+				System.out.println("Nom, nom, nom...\n");
 				break;
 
 			case "2":
 				int water = 5;
 				petShelter.waterTheShelter(water);
 				petShelter.shelterTickMethod();
+				System.out.println("Ahhhhhhhhhhhhhh...\n");
 				break;
 
 			case "3":
 				int fun = 10;
-				System.out.println("Enter the pet's name you would like to play with: ");
+				System.out.println("Enter the pet's name you would like to play with:\n");
+				for (VirtualPet availablePets : petShelter.availablePets()) {
+					System.out.println(availablePets.getName() + "\t|" + availablePets.getDescription());
+				}
 				String petName = input.next();
 				petShelter.getPet(petName).letsPlay(fun);
 				petShelter.shelterTickMethod();
+				System.out.println(petName + " loved play time\n");
 				break;
 
 			case "4":
@@ -79,12 +85,12 @@ public class VirtualPetShelterApp {
 
 			// Invalid menu option entered
 			default:
-				System.out.println("Please select a valid menu option.");
+				System.out.println("Please select a valid menu option.\n");
 			}
 
 		} while (petShelter.arePetsAvailable() == false);
 
-		System.out.println("Game over.");
+		System.out.println("Game over.  All homeless virtual pets have found homes. :)");
 
 		input.close();
 	}
@@ -101,7 +107,7 @@ public class VirtualPetShelterApp {
 
 	// Admit a pet
 	private static VirtualPet promptUserForNewPet(Scanner input) {
-		System.out.println("Enter the name of the pet:");
+		System.out.println("Enter the name of the pet you would like to add:");
 		String petName = input.next();
 		System.out.println("Enter the description of the pet:");
 		String petDescription = input.next();
