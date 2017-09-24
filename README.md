@@ -24,11 +24,16 @@ Attributes (instance variables)
 These are the statuses of the inital pets in the shelter whene the game begins:
 
 
-Name 	|Hunger |Thirst |Boredom
-Buck	|6		|10		|3
-Gracie	|3		|8		|10
-Molly	|5		|9		|7
-Frankie	|8		|7		|5
+	Name 	|Hunger |Thirst |Boredom
+
+	Buck	|6		|10		|3
+
+	Gracie	|3		|8		|10
+
+	Molly	|5		|9		|7
+
+	Frankie	|8		|7		|5
+	
 
 The game ends when all of the available pets have been adopted.
 
