@@ -15,9 +15,11 @@ To start the game the following pets are available for adoption in the shelter:
 
 Attributes (instance variables)
 
-HungerLevel
-BoredomLevel
-ThirstLevel
+	HungerLevel
+
+	BoredomLevel
+
+	ThirstLevel
 
 These are the statuses of the inital pets in the shelter whene the game begins:
 
