@@ -1,20 +1,26 @@
 Welcome to the Home for Homeless Virtual Pets
+
 *Unless you are a virtual cat... no virtual cats allowed.
 
-To star the game the following pets are available for adoption in the shelter:
+To start the game the following pets are available for adoption in the shelter:
 
 Buck	|A fun loving Mutt that just wants to run and play
+
 Gracie	|A sweet Puggle that could stand to lose a few pounds
+
 Molly	|A Jug who would love to rip the face off the mailman
+
 Frankie	|An Italian Greyhound who likes long walks along the Scioto
 
-Attributes (instance variables)
 
-These are the statuses of the inital pets in the shelter whene the game begins:
+Attributes (instance variables)
 
 HungerLevel
 BoredomLevel
 ThirstLevel
+
+These are the statuses of the inital pets in the shelter whene the game begins:
+
 
 Name 	|Hunger |Thirst |Boredom
 Buck	|6		|10		|3
